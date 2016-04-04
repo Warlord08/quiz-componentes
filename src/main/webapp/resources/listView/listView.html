@@ -1,0 +1,27 @@
+<div class="container" ng-controller="listCtrl">
+    <div class="row col-md-12">
+    	<h3 style="margin-bottom: 25px; text-align: center;">Lista Propiedades</h3>
+	    <table class="table table-hover">
+	    <thead>
+	        <tr>
+	            <th>Direccion</th>
+	            <th>Precio</th>
+	            <th>Fecha Registro</th>
+	            <th class="text-center">Accion</th>
+	        </tr>
+	    </thead>
+		    <tbody ng-repeat="propiedad in listaPropiedades">
+		            <tr>
+		                <td>{{propiedad.direccion}}</td>
+		                <td>{{propiedad.precio | currency}}</td>
+		                <td>{{fecha | date:'yyyy-MM-dd'}}</td>
+		                <td class="text-center">
+		                	<a class='btn btn-info btn-xs' ng-click="editar(propiedad.idPropiedad)"><span class="glyphicon glyphicon-edit"></span> Edit</a> 
+		                	<a class="btn btn-danger btn-xs" ng-click="deletePropiedad(propiedad.idPropiedad, $index)"><span class="glyphicon glyphicon-remove"></span> Del</a>
+		                </td>
+		            </tr>
+		    </tbody>
+	    </table>
+	    <a ui-sref="registrar" class="btn btn-primary btn-md pull-right"><b>+</b> Agregar Propiedad</a>
+    </div>
+</div>

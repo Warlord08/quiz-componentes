@@ -1,0 +1,32 @@
+<div class="container" ng-controller="editCtrl">
+	<div class="col-md-12">
+	    <div class="form-area">  
+	        <form id="PropForm" name="PropForm" role="form">
+	        <br style="clear:both">
+	                    <h3 style="margin-bottom: 25px; text-align: center;">Editar Propiedad</h3>
+	    				<div class="form-group">
+							<input type="text" class="form-control" data-ng-model="propiedad.direccion" ng-maxlength="45"
+							id="direccion" name="direccion" placeholder="Dirección" required>
+							<span ng-show="PropForm.direccion.$touched && PropForm.direccion.$invalid">Dirección es requerida</span>
+							<span class="error" ng-show="PropForm.direccion.$error.maxlength">Debe ser menor a 45 caracteres</span>
+						</div>
+						<div class="input-group">
+							<div class="input-group-addon">$</div>
+							<input type="number" class="form-control" data-ng-model="propiedad.precio" ng-maxlength="8"
+							id="precio" name="precio" placeholder="Precio" required>
+						</div>
+						<span ng-show="PropForm.precio.$touched && PropForm.precio.$invalid">Precio es requerido</span>
+						<span class="error" ng-show="PropForm.precio.$error.maxlength">Debe ser menor a 8 caracteres</span>
+						<div class="form-group">
+							<label>Fecha Registro</label>
+							<input type="date" class="form-control" data-ng-model="fecha"
+							id="date" name="fecha" placeholder="yyyy/mm/dd" disabled>
+						</div>
+		        <div class="pull-right">    
+			        <button type="button" id="submit" name="submit" class="btn btn-primary" ng-click="updatePropiedad()">Editar</button>
+			        <a id="cancel" class="btn btn-danger" ui-sref="lista">Cancelar</a>
+		        </div>
+	        </form>
+	    </div>
+	</div>
+</div>
